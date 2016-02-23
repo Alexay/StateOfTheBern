@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/scripts', express.static(__dirname + '/node_modules/datamaps/dist/'));
+app.use('/scripts', express.static(__dirname + '/node_modules/'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -79,7 +79,7 @@ vermontPID = 5796;
 
 // This array needs to be updated with more states as the polls will be coming in.
 statesArray = [
-    ['sCarolina', 'nevada', 'texas', 'massachusetts', 'virginia', 'minnesota', 'tennessee', 'arkansas', 'oklahoma', 'vermont'],
+    ['South Carolina', 'Nevada', 'Texas', 'Massachusetts', 'Virginia', 'Minnesota', 'Tennessee', 'Arkansas', 'Oklahoma', 'Vermont'],
     [4167,5337,4158,3891,3922,3585,5768,5233,5739,5796]
 ];
 

@@ -2,7 +2,13 @@
  * Holds the US map with all the data
  */
 
-var stateNames = ['sCarolina', 'nevada', 'texas', 'massachusetts', 'virginia', 'minnesota', 'tennessee', 'arkansas', 'oklahoma', 'vermont'];
+var stateNames = ['South Carolina', 'Nevada', 'Texas', 'Massachusetts', 'Virginia', 'Minnesota', 'Tennessee', 'Arkansas', 'Oklahoma', 'Vermont'];
+
+//var fillFunction = function(stateName) {
+//    console.log(obj.frontrunnerName);
+//};
+//
+//fillFunction(stateNames[0]);
 
 var election = new Datamap({
     scope: 'usa',
