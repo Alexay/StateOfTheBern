@@ -62,6 +62,7 @@ app.use(function(err, req, res, next) {
 
 
 /*
+State PIDs for the RCP average JSON API:
 sCarolinaPID = 4167;
 nevadaPID = 5337;
 texasPID = 4158;
@@ -75,39 +76,46 @@ oklahomaPID = 5739;
 vermontPID = 5796;
 */
 
+
+// This array needs to be updated with more states as the polls will be coming in.
 statesArray = [
     ['sCarolina', 'nevada', 'texas', 'massachusetts', 'virginia', 'minnesota', 'tennessee', 'arkansas', 'oklahoma', 'vermont'],
     [4167,5337,4158,3891,3922,3585,5768,5233,5739,5796]
 ];
 
-for (var i = 0; i<statesArray[0].length; i++) {
-    (function (i) {
-        var preview_suffix = '';
-        var myUrl = 'http://www.realclearpolitics.com/epolls/json/' + statesArray[1][i] + '_historical' + preview_suffix + '.js?' + '';
-        var jsonObject;
-        var file = './public/javascripts/' + statesArray[0][i] + '.json';
+
+/**
+ *  The interval is meant to be for updating the polling data every hour.
+ */
+var interval = setInterval(function() {
+    for (var i = 0; i < statesArray[0].length; i++) {
+        (function (i) {
+            var preview_suffix = '';
+            var myUrl = 'http://www.realclearpolitics.com/epolls/json/' + statesArray[1][i] + '_historical' + preview_suffix + '.js?' + '';
+            var jsonObject;
+            var file = './public/javascripts/' + statesArray[0][i] + '.json';
 
 
-        request({
-            url: myUrl,
-            json: true,
-        }, function (error, response, body) {
-            if (!error && response.statusCode === 200) {
-                console.log(body); // Print the json response
-                jsonObject = JSON.parse(body.substr(12, body.length - 14));
-                var finalObject = {
-                    "frontrunnerName" : jsonObject.poll.rcp_avg[0].candidate[0].name,
-                    "frontrunnerPoints" : jsonObject.poll.rcp_avg[0].candidate[0].value,
-                    "underdogName" : jsonObject.poll.rcp_avg[0].candidate[1].name,
-                    "underdogPoints" : jsonObject.poll.rcp_avg[0].candidate[1].value
-                };
-                jsonfile.writeFile(file, finalObject, function (err) {
-                    console.error(err);
-                })
-            }
-        });
-    })(i);
-}
-
+            request({
+                url: myUrl,
+                json: true,
+            }, function (error, response, body) {
+                if (!error && response.statusCode === 200) {
+                    console.log(body); // Print the json response
+                    jsonObject = JSON.parse(body.substr(12, body.length - 14));
+                    var finalObject = {
+                        "frontrunnerName": jsonObject.poll.rcp_avg[0].candidate[0].name,
+                        "frontrunnerPoints": jsonObject.poll.rcp_avg[0].candidate[0].value,
+                        "underdogName": jsonObject.poll.rcp_avg[0].candidate[1].name,
+                        "underdogPoints": jsonObject.poll.rcp_avg[0].candidate[1].value
+                    };
+                    jsonfile.writeFile(file, finalObject, function (err) {
+                        console.error(err);
+                    })
+                }
+            });
+        })(i);
+    }
+}, 3600000);
 
 module.exports = app;
