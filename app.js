@@ -60,10 +60,12 @@ app.use(function(err, req, res, next) {
   });
 });
 
+
+/*
 sCarolinaPID = 4167;
 nevadaPID = 5337;
 texasPID = 4158;
-//georgiaPID = 5623;
+georgiaPID = 5623; -- empty response as of 2016-02-23
 massachusettsPID = 3891;
 virginiaPID = 3922;
 minnesotaPID = 3585;
@@ -71,20 +73,19 @@ tennesseePID = 5768;
 arkansasPID = 5233;
 oklahomaPID = 5739;
 vermontPID = 5796;
+*/
 
 statesArray = [
     ['sCarolina', 'nevada', 'texas', 'massachusetts', 'virginia', 'minnesota', 'tennessee', 'arkansas', 'oklahoma', 'vermont'],
     [4167,5337,4158,3891,3922,3585,5768,5233,5739,5796]
 ];
 
-for (var i = 0; i<statesArray[0].length; i++)
-{
-    console.log(statesArray[0][i]);
-    console.log(statesArray[1][i]);
-    var preview_suffix = '';
-    var myUrl = 'http://www.realclearpolitics.com/epolls/json/' + statesArray[1][i] + '_historical' + preview_suffix + '.js?' + '';
-    var jsonObject;
-    var file = './public/javascripts/'+ statesArray[0][i] +'.json';
+for (var i = 0; i<statesArray[0].length; i++) {
+    (function (i) {
+        var preview_suffix = '';
+        var myUrl = 'http://www.realclearpolitics.com/epolls/json/' + statesArray[1][i] + '_historical' + preview_suffix + '.js?' + '';
+        var jsonObject;
+        var file = './public/javascripts/' + statesArray[0][i] + '.json';
 
 
         request({
@@ -94,11 +95,19 @@ for (var i = 0; i<statesArray[0].length; i++)
             if (!error && response.statusCode === 200) {
                 console.log(body); // Print the json response
                 jsonObject = JSON.parse(body.substr(12, body.length - 14));
-                jsonfile.writeFile(file, jsonObject, function (err) {
+                var finalObject = {
+                    "frontrunnerName" : jsonObject.poll.rcp_avg[0].candidate[0].name,
+                    "frontrunnerPoints" : jsonObject.poll.rcp_avg[0].candidate[0].value,
+                    "underdogName" : jsonObject.poll.rcp_avg[0].candidate[1].name,
+                    "underdogPoints" : jsonObject.poll.rcp_avg[0].candidate[1].value
+                };
+                jsonfile.writeFile(file, finalObject, function (err) {
                     console.error(err);
                 })
             }
         });
-
+    })(i);
 }
+
+
 module.exports = app;
