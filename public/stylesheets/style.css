@@ -2,6 +2,7 @@ body {
     background-color: #00B7FF;
     padding: 10px;
     font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
+    align-content: center;
 }
 
 a {

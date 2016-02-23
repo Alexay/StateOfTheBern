@@ -4,11 +4,26 @@
 
 var stateNames = ['South Carolina', 'Nevada', 'Texas', 'Massachusetts', 'Virginia', 'Minnesota', 'Tennessee', 'Arkansas', 'Oklahoma', 'Vermont'];
 
-//var fillFunction = function(stateName) {
-//    console.log(obj.frontrunnerName);
-//};
-//
-//fillFunction(stateNames[0]);
+function fillDeterminer(stateName) {
+    $.getJSON('/javascripts/'+stateName+'.json', function (json) {
+        console.log("success");
+        var delta = json.frontrunnerPoints - json.underdogPoints;
+        console.log(delta);
+        if (json.frontrunnerName == "Clinton") {
+            if (delta >= 15) return "Heavy Republican";
+            else if (delta >= 5) return "Republican";
+            else if (delta > 0) return "Light Republican";
+        }
+        else {
+            if (delta >= 15) return "Heavy Democrat";
+            else if (delta >= 5) return "Democrat";
+            else if (delta > 0) return "Light Democrat";
+        }
+    });
+}
+
+fillDeterminer('South Carolina');
+
 
 var election = new Datamap({
     scope: 'usa',
@@ -170,7 +185,7 @@ var election = new Datamap({
             "electoralVotes": 24
         },
         "SC": {
-            "fillKey": "Republican",
+            "fillKey": fillDeterminer('South Carolina'),
             "electoralVotes": 53
         },
         "SD": {
