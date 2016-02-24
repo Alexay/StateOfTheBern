@@ -6,13 +6,13 @@ If you would like to compile polling data for states that aren't yet available o
 you can create a JSON-formatted file and open an issue. The format is as follows:
 
 ```json
-    {
-    "frontrunnerName":"Clinton",
-    "frontrunnerPoints":"57.4",
-    "underdogName":"Sanders",
-    "underdogPoints":"33.3",
-    "pollDate":"Fri, 19 Feb 2016 00:00:00 -0600"
-    }
+{
+  "frontrunnerName":"Clinton",
+  "frontrunnerPoints":"57.4",
+  "underdogName":"Sanders",
+  "underdogPoints":"33.3",
+  "pollDate":"Fri, 19 Feb 2016 00:00:00 -0600"
+}
 ```
 
 Save that into a `.json` file named after the double-lettered short name of the state.
