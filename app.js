@@ -62,8 +62,8 @@ app.use(function(err, req, res, next) {
 
 // This array needs to be updated with more states as the polls will be coming in.
 statesArray = [
-    ['SC', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC'],
-    [4167, 4158, 3891, 3922, 3585, 5768, 5233, 5739, 5796, 5695, 5623, 3556, 5313, 5175]
+    ['SC', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC', 'NJ', 'MD', 'MI', 'CT', 'PA', 'MD', 'MI', 'WI', 'CA'],
+    [4167, 4158, 3891, 3922, 3585, 5768, 5233, 5739, 5796, 5695, 5623, 3556, 5313, 5175, 3443, 4312, 5224, 5353, 4249, 4312, 5224, 3764, 5321]
 ];
 
 
