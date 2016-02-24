@@ -1,6 +1,6 @@
 body {
     background-color: #00B7FF;
-    font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -19,5 +19,5 @@ p {
 
 footer {
     color: whitesmoke;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
