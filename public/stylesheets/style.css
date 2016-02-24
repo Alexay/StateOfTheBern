@@ -1,15 +1,23 @@
 body {
     background-color: #00B7FF;
-    padding: 10px;
     font: 30px "Lucida Grande", Helvetica, Arial, sans-serif;
-    align-content: center;
 }
 
 a {
-  color: #00B7FF;
+  color: whitesmoke;
 }
 
 h1 {
     color: whitesmoke;
     text-align: center;
+}
+
+p {
+    color: whitesmoke;
+    text-align: center;
+}
+
+footer {
+    color: whitesmoke;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }

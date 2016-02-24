@@ -10,7 +10,7 @@ var election = new Datamap({
         highlightBorderColor: '#ffffff',
         highlightFillColor: '#ff66ff',
         popupTemplate: function(geography, data) {
-            return '<div class="hoverinfo">' + geography.properties.name + ' delegates:' +  data.electoralVotes + '   ' + data.frontrunnerName +' lead: ' + data.lead+'%'
+            return '<div class="hoverinfo">' + geography.properties.name + ' delegates:' +  data.electoralVotes + '<br>' + data.frontrunnerName +' lead: ' + data.lead+'%'
         },
         highlightBorderWidth: 3
     },

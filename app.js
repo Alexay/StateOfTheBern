@@ -61,21 +61,6 @@ app.use(function(err, req, res, next) {
 });
 
 
-/*
-State PIDs for the RCP average JSON API:
-sCarolinaPID = 4167;
-nevadaPID = 5337;
-texasPID = 4158;
-georgiaPID = 5623;
-massachusettsPID = 3891;
-virginiaPID = 3922;
-minnesotaPID = 3585;
-tennesseePID = 5768;
-arkansasPID = 5233;
-oklahomaPID = 5739;
-vermontPID = 5796;
-*/
-
 
 // This array needs to be updated with more states as the polls will be coming in.
 statesArray = [
@@ -85,6 +70,8 @@ statesArray = [
 
 
 /**
+ *  This is the function that deals with downloading the JSON objects containing the polling
+ *  data as well as extracting the latest polling data and writing it into the cache.
  *  The interval is meant to be for updating the polling data every hour.
  */
 var interval = setInterval(function() {
