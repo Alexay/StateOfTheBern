@@ -10,31 +10,31 @@ var election = new Datamap({
         highlightBorderColor: '#ffffff',
         highlightFillColor: '#ff66ff',
         popupTemplate: function(geography, data) {
-            return '<div class="hoverinfo">' + geography.properties.name + ' delegates:' +  data.electoralVotes + ' '
+            return '<div class="hoverinfo">' + geography.properties.name + ' delegates:' +  data.electoralVotes + '   ' + data.frontrunnerName +' lead: ' + data.lead+'%'
         },
         highlightBorderWidth: 3
     },
 
     fills: {
-        'Republican': '#CC4731',
-        'Democrat': '#306596',
-        'Heavy Democrat': '#667FAF',
+        'Republican': '#CA5E5B',
+        'Democrat': '#667FAF',
+        'Heavy Democrat': '#306596',
         'Light Democrat': '#A9C0DE',
-        'Heavy Republican': '#CA5E5B',
+        'Heavy Republican': '#CC4731',
         'Light Republican': '#EAA9A8',
         defaultFill: '#CCCCCC'
     },
     data:{
         "AZ": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 75
         },
         "CO": {
-            "fillKey": "Light Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 66
         },
         "DE": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 21
         },
         "FL": {
@@ -42,103 +42,109 @@ var election = new Datamap({
             "electoralVotes": 214
         },
         "GA": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 102
         },
         "HI": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 25
         },
         "ID": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 23
         },
         "IL": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 156
         },
         "IN": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 83
         },
         "IA": {
-            "fillKey": "Light Democrat",
-            "electoralVotes": 44
+            "fillKey": "Light Republican",
+            "electoralVotes": 44,
+            "frontrunnerName": "Clinton",
+            "lead": 0.3
         },
         "KS": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 33
         },
         "KY": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 55
         },
         "LA": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 51
         },
         "MD": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 95
         },
         "ME": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 25
         },
         "MA": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 91
         },
         "MN": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 77
         },
         "MI": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 130
         },
         "MS": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 36
         },
         "MO": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 71
         },
         "MT": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 21
         },
         "NC": {
-            "fillKey": "Light Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 107
         },
         "NE": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 25
         },
         "NV": {
-            "fillKey": "Heavy Democrat",
-            "electoralVotes": 35
+            "fillKey": "Republican",
+            "electoralVotes": 35,
+            "frontrunnerName": "Clinton",
+            "lead": 5.3
         },
         "NH": {
-            "fillKey": "Light Democrat",
-            "electoralVotes": 24
+            "fillKey": "Heavy Democrat",
+            "electoralVotes": 24,
+            "frontrunnerName": "Sanders",
+            "lead": 22.4
         },
         "NJ": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 126
         },
         "NY": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 247
         },
         "ND": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 18
         },
         "NM": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 34
         },
         "OH": {
@@ -146,90 +152,90 @@ var election = new Datamap({
             "electoralVotes": 143
         },
         "OK": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 38
         },
         "OR": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 61
         },
         "PA": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 189
         },
         "RI": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 24
         },
         "SC": {
-            "fillKey": "undecided",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 53
         },
         "SD": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 20
         },
         "TN": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 67
         },
         "TX": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 222
         },
         "UT": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 33
         },
         "WI": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 86
         },
         "VA": {
-            "fillKey": "Light Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 95
         },
         "VT": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 16
         },
         "WA": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 101
         },
         "WV": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 29
         },
         "WY": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 14
         },
         "CA": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 475
         },
         "CT": {
-            "fillKey": "Democrat",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 55
         },
         "AK": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 16
         },
         "AR": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 32
         },
         "AL": {
-            "fillKey": "Republican",
+            "fillKey": "UNDECIDED",
             "electoralVotes": 53
         }
     }
 });
 election.labels();
 
-var stateNames = ['SC', 'NV', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA'];
+var stateNames = ['SC', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
@@ -250,6 +256,8 @@ function fillDeterminer(stateName, datamap) {
         // in order to pass the fill key and then update the map.
         var innerObj = {};
         innerObj.fillKey = fill;
+        innerObj.frontrunnerName = json.frontrunnerName;
+        innerObj.lead = delta.toPrecision(3);
         var outerObj = {};
         outerObj[stateName] = innerObj;
         datamap.updateChoropleth(outerObj);

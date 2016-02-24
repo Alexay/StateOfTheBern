@@ -66,7 +66,7 @@ State PIDs for the RCP average JSON API:
 sCarolinaPID = 4167;
 nevadaPID = 5337;
 texasPID = 4158;
-georgiaPID = 5623; -- empty response as of 2016-02-23
+georgiaPID = 5623;
 massachusettsPID = 3891;
 virginiaPID = 3922;
 minnesotaPID = 3585;
@@ -79,8 +79,8 @@ vermontPID = 5796;
 
 // This array needs to be updated with more states as the polls will be coming in.
 statesArray = [
-    ['SC', 'NV', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA'],
-    [4167,5337,4158,3891,3922,3585,5768,5233,5739,5796, 5695]
+    ['SC', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC'],
+    [4167, 4158, 3891, 3922, 3585, 5768, 5233, 5739, 5796, 5695, 5623, 3556, 5313, 5175]
 ];
 
 
