@@ -92,7 +92,8 @@ var interval = setInterval(function() {
                         "frontrunnerName": jsonObject.poll.rcp_avg[0].candidate[0].name,
                         "frontrunnerPoints": jsonObject.poll.rcp_avg[0].candidate[0].value,
                         "underdogName": jsonObject.poll.rcp_avg[0].candidate[1].name,
-                        "underdogPoints": jsonObject.poll.rcp_avg[0].candidate[1].value
+                        "underdogPoints": jsonObject.poll.rcp_avg[0].candidate[1].value,
+                        "pollDate": jsonObject.poll.rcp_avg[0].date
                     };
                     jsonfile.writeFile(file, finalObject, function (err) {
                         console.error(err);

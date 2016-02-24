@@ -10,7 +10,7 @@ var election = new Datamap({
         highlightBorderColor: '#ffffff',
         highlightFillColor: '#ff66ff',
         popupTemplate: function(geography, data) {
-            return '<div class="hoverinfo">' + geography.properties.name + ' delegates:' +  data.electoralVotes + '<br>' + data.frontrunnerName +' lead: ' + data.lead+'%'
+            return '<div class="hoverinfo">' + geography.properties.name + ' delegates:' +  data.electoralVotes + '<br>' + data.frontrunnerName +' lead: ' + data.lead+'%' + '<br>' + data.pollDate
         },
         highlightBorderWidth: 3
     },
@@ -65,7 +65,8 @@ var election = new Datamap({
             "fillKey": "Light Republican",
             "electoralVotes": 44,
             "frontrunnerName": "Clinton",
-            "lead": 0.3
+            "lead": 0.3,
+            "pollDate": "Final result"
         },
         "KS": {
             "fillKey": "UNDECIDED",
@@ -123,13 +124,15 @@ var election = new Datamap({
             "fillKey": "Republican",
             "electoralVotes": 35,
             "frontrunnerName": "Clinton",
-            "lead": 5.3
+            "lead": 5.3,
+            "pollDate": "Final result"
         },
         "NH": {
             "fillKey": "Heavy Democrat",
             "electoralVotes": 24,
             "frontrunnerName": "Sanders",
-            "lead": 22.4
+            "lead": 22.4,
+            "pollDate": "Final result"
         },
         "NJ": {
             "fillKey": "UNDECIDED",
@@ -258,6 +261,7 @@ function fillDeterminer(stateName, datamap) {
         innerObj.fillKey = fill;
         innerObj.frontrunnerName = json.frontrunnerName;
         innerObj.lead = delta.toPrecision(3);
+        innerObj.pollDate = json.pollDate.substr(0,16);
         var outerObj = {};
         outerObj[stateName] = innerObj;
         datamap.updateChoropleth(outerObj);
