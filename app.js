@@ -79,8 +79,8 @@ vermontPID = 5796;
 
 // This array needs to be updated with more states as the polls will be coming in.
 statesArray = [
-    ['South Carolina', 'Nevada', 'Texas', 'Massachusetts', 'Virginia', 'Minnesota', 'Tennessee', 'Arkansas', 'Oklahoma', 'Vermont'],
-    [4167,5337,4158,3891,3922,3585,5768,5233,5739,5796]
+    ['SC', 'NV', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA'],
+    [4167,5337,4158,3891,3922,3585,5768,5233,5739,5796, 5695]
 ];
 
 
@@ -98,7 +98,7 @@ var interval = setInterval(function() {
 
             request({
                 url: myUrl,
-                json: true,
+                json: true
             }, function (error, response, body) {
                 if (!error && response.statusCode === 200) {
                     console.log(body); // Print the json response

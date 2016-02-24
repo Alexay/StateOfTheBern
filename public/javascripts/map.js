@@ -2,29 +2,6 @@
  * Holds the US map with all the data
  */
 
-var stateNames = ['South Carolina', 'Nevada', 'Texas', 'Massachusetts', 'Virginia', 'Minnesota', 'Tennessee', 'Arkansas', 'Oklahoma', 'Vermont'];
-
-function fillDeterminer(stateName) {
-    $.getJSON('/javascripts/'+stateName+'.json', function (json) {
-        console.log("success");
-        var delta = json.frontrunnerPoints - json.underdogPoints;
-        console.log(delta);
-        if (json.frontrunnerName == "Clinton") {
-            if (delta >= 15) return "Heavy Republican";
-            else if (delta >= 5) return "Republican";
-            else if (delta > 0) return "Light Republican";
-        }
-        else {
-            if (delta >= 15) return "Heavy Democrat";
-            else if (delta >= 5) return "Democrat";
-            else if (delta > 0) return "Light Democrat";
-        }
-    });
-}
-
-fillDeterminer('South Carolina');
-
-
 var election = new Datamap({
     scope: 'usa',
     responsive: true,
@@ -185,7 +162,7 @@ var election = new Datamap({
             "electoralVotes": 24
         },
         "SC": {
-            "fillKey": fillDeterminer('South Carolina'),
+            "fillKey": "undecided",
             "electoralVotes": 53
         },
         "SD": {
@@ -251,3 +228,34 @@ var election = new Datamap({
     }
 });
 election.labels();
+
+var stateNames = ['SC', 'NV', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA'];
+
+function fillDeterminer(stateName, datamap) {
+    $.getJSON('/javascripts/'+stateName+'.json', function (json) {
+        var delta = json.frontrunnerPoints - json.underdogPoints;
+        var fill;
+        if (json.frontrunnerName == "Clinton") {
+            if (delta >= 15) fill = "Heavy Republican";
+            else if (delta >= 5) fill ="Republican";
+            else if (delta > 0) fill ="Light Republican";
+        }
+        else {
+            if (delta >= 15) fill = "Heavy Democrat";
+            else if (delta >= 5) fill ="Democrat";
+            else if (delta > 0) fill = "Light Democrat";
+        }
+
+        // Here, I'm creating an object with the state's name as a variable
+        // in order to pass the fill key and then update the map.
+        var innerObj = {};
+        innerObj.fillKey = fill;
+        var outerObj = {};
+        outerObj[stateName] = innerObj;
+        datamap.updateChoropleth(outerObj);
+    });
+}
+
+for (i = 0; i<stateNames.length;i++) {
+    fillDeterminer(stateNames[i], election);
+}
