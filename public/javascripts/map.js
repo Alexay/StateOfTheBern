@@ -8,9 +8,16 @@ var election = new Datamap({
     element: document.getElementById('container'),
     geographyConfig: {
         highlightBorderColor: '#ffffff',
-        highlightFillColor: '#ff66ff',
+        highlightFillOpacity: 0.5,
         popupTemplate: function(geography, data) {
-            return '<div class="hoverinfo">' + geography.properties.name + ' delegates:' +  data.electoralVotes + '<br>' + data.frontrunnerName +' lead: ' + data.lead+'%' + '<br>' + data.pollDate
+            var output = '<div class="hoverinfo">' + geography.properties.name + ' delegates: ' +  data.electoralVotes;
+            if (data.frontrunnerName != undefined) {
+                output += '<br>' + data.frontrunnerName +' lead: ' + data.lead+'%' + '<br>' + data.pollDate;
+            }
+            else {
+                output += '<br> No polling data available';
+            }
+            return output;
         },
         highlightBorderWidth: 3
     },
@@ -22,6 +29,8 @@ var election = new Datamap({
         'Light Democrat': '#A9C0DE',
         'Heavy Republican': '#CC4731',
         'Light Republican': '#EAA9A8',
+        'Republican Win': '#FF00FF',
+        'Democrat Win': '#00FFFF',
         defaultFill: '#CCCCCC'
     },
     data:{
@@ -62,7 +71,7 @@ var election = new Datamap({
             "electoralVotes": 83
         },
         "IA": {
-            "fillKey": "Light Republican",
+            "fillKey": "Republican Win",
             "electoralVotes": 44,
             "frontrunnerName": "Clinton",
             "lead": 0.3,
@@ -121,14 +130,14 @@ var election = new Datamap({
             "electoralVotes": 25
         },
         "NV": {
-            "fillKey": "Republican",
+            "fillKey": "Republican Win",
             "electoralVotes": 35,
             "frontrunnerName": "Clinton",
             "lead": 5.3,
             "pollDate": "Final result"
         },
         "NH": {
-            "fillKey": "Heavy Democrat",
+            "fillKey": "Democrat Win",
             "electoralVotes": 24,
             "frontrunnerName": "Sanders",
             "lead": 22.4,
