@@ -233,12 +233,16 @@ var election = new Datamap({
         "AL": {
             "fillKey": "UNDECIDED",
             "electoralVotes": 53
+        },
+        "DC": {
+            "fillKey": "UNDECIDED",
+            "electoralVotes": 53
         }
     }
 });
 election.labels();
 
-var stateNames = ['SC', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC'];
+var stateNames = ['SC', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC', 'NJ', 'MD', 'MI', 'CT', 'PA', 'WI', 'CA'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
