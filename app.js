@@ -102,6 +102,6 @@ var interval = setInterval(function() {
             });
         })(i);
     }
-}, 3600000);
+}, 300000);
 
 module.exports = app;
