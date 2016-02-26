@@ -6,13 +6,18 @@ var election = new Datamap({
     scope: 'usa',
     responsive: true,
     element: document.getElementById('container'),
+    done: function(datamap) {
+        datamap.svg.selectAll('.datamaps-subunit').on('click', function (geography) {
+            window.open(statePollLinks.get(geography.id),'_blank');
+        });
+    },
     geographyConfig: {
         highlightBorderColor: '#ffffff',
         highlightFillOpacity: 0.5,
         popupTemplate: function(geography, data) {
             var output = '<div class="hoverinfo">' + geography.properties.name + ' delegates: ' +  data.electoralVotes + '<br>Primary/caucus date: ' + data.primaryDate;
             if (data.frontrunnerName != undefined) {
-                output += '<br>' + data.frontrunnerName +' lead: ' + data.lead+'%' + '<br>' + data.pollDate;
+                output += '<br>' + data.frontrunnerName +' lead: ' + data.lead+'%' + '<br>' + data.pollDate + '<br><b>Click the state to open its RCP page.</b>';
             }
             else {
                 output += '<br> No polling data available';
@@ -335,3 +340,35 @@ function fillDeterminer(stateName, datamap) {
 for (i = 0; i<stateNames.length;i++) {
     fillDeterminer(stateNames[i], election);
 }
+
+// Contains the links for the function that opens a new tab for the state RCP poll website.
+var statePollLinks = new Map();
+statePollLinks.set('VA', 'http://www.realclearpolitics.com/epolls/2016/president/va/virginia_democratic_presidential_primary-3922.html');
+statePollLinks.set('MA', 'http://www.realclearpolitics.com/epolls/2016/president/ma/massachusetts_democratic_presidential_primary-3891.html');
+statePollLinks.set('FL', 'http://www.realclearpolitics.com/epolls/2016/president/fl/florida_democratic_presidential_primary-3556.html');
+statePollLinks.set('SC', 'http://www.realclearpolitics.com/epolls/2016/president/sc/south_carolina_democratic_presidential_primary-4167.html');
+statePollLinks.set('GA', 'http://www.realclearpolitics.com/epolls/2016/president/ga/georgia_democratic_presidential_primary-5623.html');
+statePollLinks.set('TX', 'http://www.realclearpolitics.com/epolls/2016/president/tx/texas_democratic_presidential_primary-4158.html');
+statePollLinks.set('MI', 'http://www.realclearpolitics.com/epolls/2016/president/mi/michigan_democratic_presidential_primary-5224.html');
+statePollLinks.set('WI', 'http://www.realclearpolitics.com/epolls/2016/president/wi/wisconsin_democratic_presidential_primary-3764.html');
+statePollLinks.set('PA', 'http://www.realclearpolitics.com/epolls/2016/president/pa/pennsylvania_democratic_presidential_primary-4249.html');
+statePollLinks.set('OK', 'http://www.realclearpolitics.com/epolls/2016/president/ok/oklahoma_democratic_presidential_primary-5739.html');
+statePollLinks.set('NJ', 'http://www.realclearpolitics.com/epolls/2016/president/nj/new_jersey_democratic_presidential_primary-3443.html');
+statePollLinks.set('MD', 'http://www.realclearpolitics.com/epolls/2016/president/md/maryland_democratic_presidential_primary-4312.html');
+statePollLinks.set('OH', 'http://www.realclearpolitics.com/epolls/2016/president/oh/ohio_democratic_presidential_primary-5313.html');
+statePollLinks.set('NC', 'http://www.realclearpolitics.com/epolls/2016/president/nc/north_carolina_democratic_presidential_primary-5175.html');
+statePollLinks.set('IL', 'http://www.realclearpolitics.com/epolls/2016/president/il/illinois_democratic_presidential_primary-5567.html');
+statePollLinks.set('WV', 'http://www.realclearpolitics.com/epolls/2016/president/wv/west_virginia_democratic_presidential_primary-5425.html');
+statePollLinks.set('NM', 'http://www.realclearpolitics.com/epolls/2016/president/nc/north_carolina_democratic_presidential_primary-5175.html');
+statePollLinks.set('UT', 'http://www.realclearpolitics.com/epolls/2016/president/ut/utah_democratic_presidential_caucus-5766.html');
+statePollLinks.set('NV', 'http://www.realclearpolitics.com/epolls/2016/president/nv/nevada_democratic_presidential_caucus-5337.html');
+statePollLinks.set('AR', 'http://www.realclearpolitics.com/epolls/2016/president/ar/arkansas_democratic_presidential_primary-5233.html');
+statePollLinks.set('LA', 'http://www.realclearpolitics.com/epolls/2016/president/la/louisiana_democratic_presidential_primary-5695.html');
+statePollLinks.set('MS', 'http://www.realclearpolitics.com/epolls/2016/president/ms/mississippi_democratic_presidential_primary-5799.html');
+statePollLinks.set('TN', 'http://www.realclearpolitics.com/epolls/2016/president/tn/tennessee_democratic_presidential_primary-5768.html');
+statePollLinks.set('CA', 'http://www.realclearpolitics.com/epolls/2016/president/ca/california_democratic_presidential_primary-5321.html');
+statePollLinks.set('MN', 'http://www.realclearpolitics.com/epolls/2016/president/mn/minnesota_democratic_presidential_caucus-3585.html');
+statePollLinks.set('IA', 'http://www.realclearpolitics.com/epolls/2016/president/ia/iowa_democratic_presidential_caucus-3195.html');
+statePollLinks.set('VT', 'http://www.realclearpolitics.com/epolls/2016/president/vt/vermont_democratic_presidential_primary-5796.html');
+statePollLinks.set('NH', 'http://www.realclearpolitics.com/epolls/2016/president/nh/new_hampshire_democratic_presidential_primary-3351.html');
+statePollLinks.set('CT', 'http://www.realclearpolitics.com/epolls/2016/president/ct/connecticut_democratic_presidential_primary-5353.html');
