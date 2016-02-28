@@ -219,8 +219,11 @@ var election = new Datamap({
             "primaryDate": "April 26"
         },
         "SC": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 53,
+            "frontrunnerName": "Clinton",
+            "lead": 47.5,
+            "pollDate": "Final result",
             "primaryDate": "February 27"
         },
         "SD": {
@@ -307,7 +310,7 @@ var election = new Datamap({
 });
 election.labels();
 
-var stateNames = ['SC', 'TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC', 'NJ', 'MD', 'MI', 'CT', 'PA', 'WI', 'CA'];
+var stateNames = ['TX', 'MA', 'VA', 'MN', 'TN', 'AR', 'OK', 'VT', 'LA', 'GA', 'FL', 'OH', 'NC', 'NJ', 'MD', 'MI', 'CT', 'PA', 'WI', 'CA'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
@@ -359,7 +362,7 @@ statePollLinks.set('OH', 'http://www.realclearpolitics.com/epolls/2016/president
 statePollLinks.set('NC', 'http://www.realclearpolitics.com/epolls/2016/president/nc/north_carolina_democratic_presidential_primary-5175.html');
 statePollLinks.set('IL', 'http://www.realclearpolitics.com/epolls/2016/president/il/illinois_democratic_presidential_primary-5567.html');
 statePollLinks.set('WV', 'http://www.realclearpolitics.com/epolls/2016/president/wv/west_virginia_democratic_presidential_primary-5425.html');
-statePollLinks.set('NM', 'http://www.realclearpolitics.com/epolls/2016/president/nc/north_carolina_democratic_presidential_primary-5175.html');
+statePollLinks.set('AK', 'http://www.realclearpolitics.com/epolls/2016/president/ak/alaska_democratic_presidential_caucus-5773.html');
 statePollLinks.set('UT', 'http://www.realclearpolitics.com/epolls/2016/president/ut/utah_democratic_presidential_caucus-5766.html');
 statePollLinks.set('NV', 'http://www.realclearpolitics.com/epolls/2016/president/nv/nevada_democratic_presidential_caucus-5337.html');
 statePollLinks.set('AR', 'http://www.realclearpolitics.com/epolls/2016/president/ar/arkansas_democratic_presidential_primary-5233.html');
