@@ -86,7 +86,7 @@ var interval = setInterval(function() {
                 json: true
             }, function (error, response, body) {
                 if (!error && response.statusCode === 200) {
-                    console.log(body); // Print the json response
+                    console.log('Parsing ' + statesArray[0][i] + ' data...'); // Print the json response
                     jsonObject = JSON.parse(body.substr(12, body.length - 14));
                     var finalObject = {
                         "frontrunnerName": jsonObject.poll.rcp_avg[0].candidate[0].name,
