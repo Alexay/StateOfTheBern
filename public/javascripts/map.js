@@ -58,8 +58,11 @@ var election = new Datamap({
             "primaryDate": "April 26"
         },
         "FL": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 214,
+            "frontrunnerName": "Clinton",
+            "lead": 31.2,
+            "pollDate": "Final result",
             "primaryDate": "March 15"
         },
         "GA": {
@@ -81,8 +84,11 @@ var election = new Datamap({
             "primaryDate": "March 22"
         },
         "IL": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 156,
+            "frontrunnerName": "Clinton",
+            "lead": 1.8,
+            "pollDate": "Final result",
             "primaryDate": "March 15"
         },
         "IN": {
@@ -165,8 +171,11 @@ var election = new Datamap({
             "primaryDate": "March 8"
         },
         "MO": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 71,
+            "frontrunnerName": "Clinton",
+            "lead": 0.2,
+            "pollDate": "Final result",
             "primaryDate": "March 15"
         },
         "MT": {
@@ -175,8 +184,11 @@ var election = new Datamap({
             "primaryDate": "June 7"
         },
         "NC": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 107,
+            "frontrunnerName": "Clinton",
+            "lead": 13.8,
+            "pollDate": "Final result",
             "primaryDate": "March 15"
         },
         "NE": {
@@ -224,8 +236,11 @@ var election = new Datamap({
             "primaryDate": "June 7"
         },
         "OH": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 143,
+            "frontrunnerName": "Clinton",
+            "lead": 13.8,
+            "pollDate": "Final result",
             "primaryDate": "March 15"
         },
         "OK": {
@@ -362,7 +377,7 @@ var election = new Datamap({
 });
 election.labels();
 
-var stateNames = ['FL', 'OH', 'NC', 'NJ', 'MD', 'CT', 'PA', 'WI', 'CA', 'IL'];
+var stateNames = ['NJ', 'MD', 'CT', 'PA', 'WI', 'CA'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
@@ -400,23 +415,27 @@ for (i = 0; i<stateNames.length;i++) {
 var statePollLinks = new Map();
 statePollLinks.set('AK', 'http://www.realclearpolitics.com/epolls/2016/president/ak/alaska_democratic_presidential_caucus-5773.html');
 statePollLinks.set('AL', 'http://www.realclearpolitics.com/epolls/2016/president/al/alabama_democratic_presidential_primary-5791.html');
+statePollLinks.set('AZ', 'http://www.realclearpolitics.com/epolls/2016/president/az/arizona_democratic_presidential_primary-5466.html');
 statePollLinks.set('AR', 'http://www.realclearpolitics.com/epolls/2016/president/ar/arkansas_democratic_presidential_primary-5233.html');
 statePollLinks.set('CA', 'http://www.realclearpolitics.com/epolls/2016/president/ca/california_democratic_presidential_primary-5321.html');
 statePollLinks.set('CT', 'http://www.realclearpolitics.com/epolls/2016/president/ct/connecticut_democratic_presidential_primary-5353.html');
 statePollLinks.set('FL', 'http://www.realclearpolitics.com/epolls/2016/president/fl/florida_democratic_presidential_primary-3556.html');
 statePollLinks.set('GA', 'http://www.realclearpolitics.com/epolls/2016/president/ga/georgia_democratic_presidential_primary-5623.html');
 statePollLinks.set('IA', 'http://www.realclearpolitics.com/epolls/2016/president/ia/iowa_democratic_presidential_caucus-3195.html');
+statePollLinks.set('ID', 'http://www.realclearpolitics.com/epolls/2016/president/id/idaho_democratic_presidential_caucus-5801.html');
 statePollLinks.set('IL', 'http://www.realclearpolitics.com/epolls/2016/president/il/illinois_democratic_presidential_primary-5567.html');
 statePollLinks.set('LA', 'http://www.realclearpolitics.com/epolls/2016/president/la/louisiana_democratic_presidential_primary-5695.html');
 statePollLinks.set('MA', 'http://www.realclearpolitics.com/epolls/2016/president/ma/massachusetts_democratic_presidential_primary-3891.html');
 statePollLinks.set('MD', 'http://www.realclearpolitics.com/epolls/2016/president/md/maryland_democratic_presidential_primary-4312.html');
 statePollLinks.set('MI', 'http://www.realclearpolitics.com/epolls/2016/president/mi/michigan_democratic_presidential_primary-5224.html');
 statePollLinks.set('MN', 'http://www.realclearpolitics.com/epolls/2016/president/mn/minnesota_democratic_presidential_caucus-3585.html');
+statePollLinks.set('MO', 'http://www.realclearpolitics.com/epolls/2016/president/mo/missouri_democratic_presidential_primary-5606.html');
 statePollLinks.set('MS', 'http://www.realclearpolitics.com/epolls/2016/president/ms/mississippi_democratic_presidential_primary-5799.html');
 statePollLinks.set('NC', 'http://www.realclearpolitics.com/epolls/2016/president/nc/north_carolina_democratic_presidential_primary-5175.html');
 statePollLinks.set('NH', 'http://www.realclearpolitics.com/epolls/2016/president/nh/new_hampshire_democratic_presidential_primary-3351.html');
 statePollLinks.set('NJ', 'http://www.realclearpolitics.com/epolls/2016/president/nj/new_jersey_democratic_presidential_primary-3443.html');
 statePollLinks.set('NV', 'http://www.realclearpolitics.com/epolls/2016/president/nv/nevada_democratic_presidential_caucus-5337.html');
+statePollLinks.set('NY', 'http://www.realclearpolitics.com/epolls/2016/president/ny/new_york_democratic_presidential_primary-4221.html');
 statePollLinks.set('OH', 'http://www.realclearpolitics.com/epolls/2016/president/oh/ohio_democratic_presidential_primary-5313.html');
 statePollLinks.set('OK', 'http://www.realclearpolitics.com/epolls/2016/president/ok/oklahoma_democratic_presidential_primary-5739.html');
 statePollLinks.set('PA', 'http://www.realclearpolitics.com/epolls/2016/president/pa/pennsylvania_democratic_presidential_primary-4249.html');
