@@ -377,7 +377,7 @@ var election = new Datamap({
 });
 election.labels();
 
-var stateNames = ['NJ', 'MD', 'CT', 'PA', 'WI', 'CA'];
+var stateNames = ['NJ', 'MD', 'CT', 'PA', 'WI', 'CA', 'AZ', 'NY'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
