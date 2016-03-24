@@ -40,8 +40,11 @@ var election = new Datamap({
     },
     data:{
         "AZ": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 75,
+            "frontrunnerName": "Clinton",
+            "lead": 17.7,
+            "pollDate": "Final result",
             "primaryDate": "March 22"
         },
         "CO": {
@@ -79,8 +82,11 @@ var election = new Datamap({
             "primaryDate": "March 26"
         },
         "ID": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Democrat Win",
             "electoralVotes": 23,
+            "frontrunnerName": "Sanders",
+            "lead": 56.8,
+            "pollDate": "Final result",
             "primaryDate": "March 22"
         },
         "IL": {
@@ -296,8 +302,11 @@ var election = new Datamap({
             "primaryDate": "March 1"
         },
         "UT": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Democrat Win",
             "electoralVotes": 33,
+            "frontrunnerName": "Sanders",
+            "lead": 59.0,
+            "pollDate": "Final result",
             "primaryDate": "March 22"
         },
         "WI": {
@@ -377,7 +386,7 @@ var election = new Datamap({
 });
 election.labels();
 
-var stateNames = ['NJ', 'MD', 'CT', 'PA', 'WI', 'CA', 'AZ', 'NY'];
+var stateNames = ['NJ', 'MD', 'CT', 'PA', 'WI', 'CA', 'NY'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
