@@ -313,8 +313,11 @@ var election = new Datamap({
             "primaryDate": "March 22"
         },
         "WI": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Democrat Win",
             "electoralVotes": 86,
+            "frontrunnerName": "Sanders",
+            "lead": 13.3,
+            "pollDate": "Final result",
             "primaryDate": "April 5"
         },
         "VA": {
