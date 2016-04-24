@@ -404,7 +404,7 @@ var election = new Datamap({
 });
 election.labels();
 
-var stateNames = ['NJ', 'MD', 'CT', 'PA', 'CA'];
+var stateNames = ['NJ', 'MD', 'CT', 'PA', 'CA', 'IN'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
@@ -451,6 +451,7 @@ statePollLinks.set('GA', 'http://www.realclearpolitics.com/epolls/2016/president
 statePollLinks.set('IA', 'http://www.realclearpolitics.com/epolls/2016/president/ia/iowa_democratic_presidential_caucus-3195.html');
 statePollLinks.set('ID', 'http://www.realclearpolitics.com/epolls/2016/president/id/idaho_democratic_presidential_caucus-5801.html');
 statePollLinks.set('IL', 'http://www.realclearpolitics.com/epolls/2016/president/il/illinois_democratic_presidential_primary-5567.html');
+statePollLinks.set('IN', 'http://www.realclearpolitics.com/epolls/2016/president/in/indiana_democratic_presidential_primary-5807.html');
 statePollLinks.set('LA', 'http://www.realclearpolitics.com/epolls/2016/president/la/louisiana_democratic_presidential_primary-5695.html');
 statePollLinks.set('MA', 'http://www.realclearpolitics.com/epolls/2016/president/ma/massachusetts_democratic_presidential_primary-3891.html');
 statePollLinks.set('MD', 'http://www.realclearpolitics.com/epolls/2016/president/md/maryland_democratic_presidential_primary-4312.html');
