@@ -404,7 +404,7 @@ var election = new Datamap({
 });
 election.labels();
 
-var stateNames = ['NJ', 'MD', 'CT', 'PA', 'CA', 'IN'];
+var stateNames = ['NJ', 'MD', 'CT', 'PA', 'CA', 'IN', 'RI'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
@@ -467,6 +467,7 @@ statePollLinks.set('NY', 'http://www.realclearpolitics.com/epolls/2016/president
 statePollLinks.set('OH', 'http://www.realclearpolitics.com/epolls/2016/president/oh/ohio_democratic_presidential_primary-5313.html');
 statePollLinks.set('OK', 'http://www.realclearpolitics.com/epolls/2016/president/ok/oklahoma_democratic_presidential_primary-5739.html');
 statePollLinks.set('PA', 'http://www.realclearpolitics.com/epolls/2016/president/pa/pennsylvania_democratic_presidential_primary-4249.html');
+statePollLinks.set('RI', 'http://www.realclearpolitics.com/epolls/2016/president/ri/rhode_island_democratic_presidential_primary-5806.html');
 statePollLinks.set('SC', 'http://www.realclearpolitics.com/epolls/2016/president/sc/south_carolina_democratic_presidential_primary-4167.html');
 statePollLinks.set('TN', 'http://www.realclearpolitics.com/epolls/2016/president/tn/tennessee_democratic_presidential_primary-5768.html');
 statePollLinks.set('TX', 'http://www.realclearpolitics.com/epolls/2016/president/tx/texas_democratic_presidential_primary-4158.html');
