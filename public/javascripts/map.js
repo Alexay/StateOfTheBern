@@ -56,8 +56,11 @@ var election = new Datamap({
             "primaryDate": "March 1"
         },
         "DE": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 21,
+            "frontrunnerName": "Clinton",
+            "lead": 20.6,
+            "pollDate": "Final result",
             "primaryDate": "April 26"
         },
         "FL": {
@@ -135,8 +138,11 @@ var election = new Datamap({
             "primaryDate": "March 5"
         },
         "MD": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 95,
+            "frontrunnerName": "Clinton",
+            "lead": 29.7,
+            "pollDate": "Final result",
             "primaryDate": "April 26"
         },
         "ME": {
@@ -269,13 +275,19 @@ var election = new Datamap({
             "primaryDate": "May 17"
         },
         "PA": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 189,
+            "frontrunnerName": "Clinton",
+            "lead": 12.0,
+            "pollDate": "Final result",
             "primaryDate": "April 26"
         },
         "RI": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Democrat Win",
             "electoralVotes": 24,
+            "frontrunnerName": "Sanders",
+            "lead": 11.7,
+            "pollDate": "Final result",
             "primaryDate": "April 26"
         },
         "SC": {
@@ -366,8 +378,11 @@ var election = new Datamap({
             "primaryDate": "June 7"
         },
         "CT": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 55,
+            "frontrunnerName": "Clinton",
+            "lead": 5.4,
+            "pollDate": "Final result",
             "primaryDate": "April 26"
         },
         "AK": {
@@ -404,7 +419,7 @@ var election = new Datamap({
 });
 election.labels();
 
-var stateNames = ['NJ', 'MD', 'CT', 'PA', 'CA', 'IN', 'RI'];
+var stateNames = ['NJ', 'CA', 'IN'];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
