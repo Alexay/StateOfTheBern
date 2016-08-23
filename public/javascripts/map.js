@@ -200,8 +200,11 @@ var election = new Datamap({
             "primaryDate": "March 15"
         },
         "MT": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Democrat Win",
             "electoralVotes": 21,
+            "frontrunnerName": "Sanders",
+            "lead": 7.4,
+            "pollDate": "Final result",
             "primaryDate": "June 7"
         },
         "NC": {
@@ -237,8 +240,11 @@ var election = new Datamap({
             "primaryDate": "February 9"
         },
         "NJ": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 126,
+            "frontrunnerName": "Clinton",
+            "lead": 26.6,
+            "pollDate": "Final result",
             "primaryDate": "June 7"
         },
         "NY": {
@@ -250,13 +256,19 @@ var election = new Datamap({
             "primaryDate": "April 19"
         },
         "ND": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Democrat Win",
             "electoralVotes": 18,
+            "frontrunnerName": "Sanders",
+            "lead": 38.6,
+            "pollDate": "Final result",
             "primaryDate": "June 7"
         },
         "NM": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 34,
+            "frontrunnerName": "Clinton",
+            "lead": 3.0,
+            "pollDate": "Final result",
             "primaryDate": "June 7"
         },
         "OH": {
@@ -308,8 +320,11 @@ var election = new Datamap({
             "primaryDate": "February 27"
         },
         "SD": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 20,
+            "frontrunnerName": "Clinton",
+            "lead": 2.0,
+            "pollDate": "Final result",
             "primaryDate": "June 7"
         },
         "TN": {
@@ -385,8 +400,11 @@ var election = new Datamap({
             "primaryDate": "April 9"
         },
         "CA": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 475,
+            "frontrunnerName": "Clinton",
+            "lead": 7.1,
+            "pollDate": "Final result",
             "primaryDate": "June 7"
         },
         "CT": {
@@ -423,15 +441,19 @@ var election = new Datamap({
 
         },
         "DC": {
-            "fillKey": "UNDECIDED",
+            "fillKey": "Republican Win",
             "electoralVotes": 53,
+            "frontrunnerName": "Clinton",
+            "lead": 57.3,
+            "pollDate": "Final result",
             "primaryDate": "June 14"
         }
     }
 });
 election.labels();
 
-var stateNames = ['NJ', 'CA'];
+// Here, you would place the two-letter codes of the states you want to update.
+var stateNames = [];
 
 function fillDeterminer(stateName, datamap) {
     $.getJSON('/javascripts/'+stateName+'.json', function (json) {
