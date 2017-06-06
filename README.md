@@ -1,7 +1,7 @@
 #StateOfTheBern.com
 Tracking the RCP polling averages and visualising them on a US map.
 
-###How to contribute
+##How to contribute
 If you would like to compile polling data for states that aren't yet available on the RCP average,
 you can create a JSON-formatted file and open an issue. The format is as follows:
 
